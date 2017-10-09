@@ -1,0 +1,30 @@
+
+
+.button{
+    -fx-font-smoothing-type: gray;
+    -fx-font-size: 14px;
+}
+
+.label{
+    -fx-font-size: 14px;
+}
+
+.text-field{
+    -fx-font-size: 14px;
+}
+
+.text-area{
+    -fx-font-size: 14px;
+}
+
+.choice-box{
+    -fx-font-size: 10px;
+}
+
+
+
+
+.tooltip{
+    -fx-font-size: 11px;
+    -fx-background-color: dimgrey;
+}

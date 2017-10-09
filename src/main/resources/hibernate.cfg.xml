@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost:3306/kotlin?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=Europe/Moscow</property>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
+       <!-- <property name="connection.pool_size">10</property>--><!--the maximum size of the connection pool (only when using java.sql.DriverManager)-->
+        <property name="hibernate.c3p0.min_size">5</property><!--минимально число соединений в пуле-->
+        <property name="hibernate.c3p0.max_size">50</property><!--максимально число соединений в пуле-->
+        <property name="hibernate.c3p0.timeout">1800</property>
+        <property name="hibernate.jdbc.batch_size">30</property><!--для пакетной обработки-->
+
+      <!--  <property name="hibernate.jdbc.time_zone">UTC</property>-->
+        <!--Автоматически экспортировать DDL-схему в бузу данных, после создания SessionFactorySinglton.
+        С установленным значением create-drop, схема базы данных будет удалена, когда SessionFactorySinglton будет закрыта явно (в ручную).-->
+        <property name="hbm2ddl.auto">update</property>
+        <!--для логгирования sql запросов-->
+        <property name="show_sql">false</property>
+        <!--позволяют форматировать и добавлять комментарии в sql код-->
+        <property name="format_sql">true</property>
+
+
+
+        <mapping class="operators.Entity.StatisticEntity"/>
+
+    </session-factory>
+
+</hibernate-configuration>
